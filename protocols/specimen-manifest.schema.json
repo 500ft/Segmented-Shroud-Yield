@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/500ft/Segmented-Shroud-Yield/protocols/specimen-manifest.schema.json",
+  "title": "Segmented shroud specimen and run manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "study_id",
+    "specimen_id",
+    "run_id",
+    "evidence_state",
+    "geometry_revision",
+    "manufacturing_process",
+    "material",
+    "closure",
+    "deployment_cycle",
+    "defect_field",
+    "rotor_system",
+    "operating_point",
+    "instruments",
+    "raw_data_path"
+  ],
+  "properties": {
+    "manifest_version": {"type": "string"},
+    "study_id": {"type": "string"},
+    "specimen_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "evidence_state": {
+      "enum": ["planned-example", "CAD", "FEA", "CFD", "measured"]
+    },
+    "geometry_revision": {"type": "string"},
+    "manufacturing_process": {"type": "string"},
+    "material": {"type": "string"},
+    "closure": {
+      "type": "object",
+      "required": ["type", "preload_n"],
+      "properties": {
+        "type": {"type": "string"},
+        "preload_n": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "deployment_cycle": {"type": "integer", "minimum": 0},
+    "defect_field": {
+      "type": "object",
+      "required": ["family", "mean_clearance_mm", "measurement_method"],
+      "properties": {
+        "family": {"enum": ["uniform", "two-lobe", "three-lobe", "seam", "step", "combined"]},
+        "mean_clearance_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "measurement_method": {"type": "string"}
+      }
+    },
+    "rotor_system": {
+      "type": "object",
+      "required": ["rotor_id", "motor_id", "controller_id"],
+      "properties": {
+        "rotor_id": {"type": "string"},
+        "motor_id": {"type": "string"},
+        "controller_id": {"type": "string"}
+      }
+    },
+    "operating_point": {
+      "type": "object",
+      "required": ["control_basis", "target_value", "target_units"],
+      "properties": {
+        "control_basis": {"enum": ["matched-thrust", "matched-rpm", "commissioning"]},
+        "target_value": {"type": ["number", "null"]},
+        "target_units": {"type": "string"}
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["channel", "instrument_id", "calibration_id"],
+        "properties": {
+          "channel": {"type": "string"},
+          "instrument_id": {"type": "string"},
+          "calibration_id": {"type": "string"}
+        }
+      }
+    },
+    "raw_data_path": {"type": "string"}
+  }
+}

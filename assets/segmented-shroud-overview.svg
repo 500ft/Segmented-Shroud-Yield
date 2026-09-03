@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600" role="img" aria-labelledby="title desc">
+  <title id="title">Proposed segmented-shroud aero-mechanical yield research pipeline</title>
+  <desc id="desc">A conceptual diagram showing closure variation, deployed defects, dynamic rotor clearance, and a performance duct or guard decision. It is a plan, not a result.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102a2a"/>
+      <stop offset="1" stop-color="#17213b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#76c7b7"/>
+    </marker>
+    <style>
+      .eyebrow{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:2px;fill:#76c7b7}
+      .heading{font:700 38px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f8fafc}
+      .sub{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#cbd5e1}
+      .step{font:700 20px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f8fafc}
+      .small{font:400 16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#cbd5e1}
+      .num{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#102a2a}
+    </style>
+  </defs>
+  <rect width="1280" height="600" rx="24" fill="url(#bg)"/>
+  <text x="70" y="72" class="eyebrow">RESEARCH CONCEPT · NO HARDWARE RESULTS</text>
+  <text x="70" y="122" class="heading">Can a segmented shroud reconstruct a useful duct?</text>
+  <text x="70" y="158" class="sub">Trace deployment variation into clearance, contact risk, and thrust-per-power.</text>
+
+  <g transform="translate(70 228)">
+    <rect width="230" height="190" rx="18" fill="#26324f" stroke="#7997d4" stroke-width="2"/>
+    <circle cx="34" cy="34" r="18" fill="#76c7b7"/><text x="29" y="40" class="num">1</text>
+    <text x="26" y="86" class="step">Closure variation</text>
+    <text x="26" y="120" class="small">Joint tolerance</text>
+    <text x="26" y="147" class="small">Latch preload</text>
+    <text x="26" y="174" class="small">Deployment cycle</text>
+  </g>
+  <line x1="310" y1="323" x2="350" y2="323" stroke="#76c7b7" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(365 228)">
+    <rect width="230" height="190" rx="18" fill="#3c2c25" stroke="#f4b183" stroke-width="2"/>
+    <circle cx="34" cy="34" r="18" fill="#f4b183"/><text x="29" y="40" class="num">2</text>
+    <text x="26" y="86" class="step">Deployed defects</text>
+    <text x="26" y="120" class="small">Seams + radial steps</text>
+    <text x="26" y="147" class="small">Ovality harmonics</text>
+    <text x="26" y="174" class="small">Correlated joint error</text>
+  </g>
+  <line x1="605" y1="323" x2="645" y2="323" stroke="#76c7b7" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(660 228)">
+    <rect width="230" height="190" rx="18" fill="#3f1d2e" stroke="#f59e8b" stroke-width="2" stroke-dasharray="8 6"/>
+    <circle cx="34" cy="34" r="18" fill="#f59e8b"/><text x="29" y="40" class="num">3</text>
+    <text x="26" y="86" class="step">Rotor interaction</text>
+    <text x="26" y="120" class="small">Dynamic clearance</text>
+    <text x="26" y="147" class="small">Rubbing or strike risk</text>
+    <text x="26" y="174" class="small">Thrust-per-power</text>
+  </g>
+  <line x1="900" y1="323" x2="940" y2="323" stroke="#76c7b7" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(955 228)">
+    <rect width="255" height="190" rx="18" fill="#233c35" stroke="#b7d89a" stroke-width="2"/>
+    <circle cx="34" cy="34" r="18" fill="#b7d89a"/><text x="29" y="40" class="num">4</text>
+    <text x="26" y="86" class="step">Classify honestly</text>
+    <text x="26" y="120" class="small">Performance duct</text>
+    <text x="26" y="147" class="small">Protective guard</text>
+    <text x="26" y="174" class="small">Or neither</text>
+  </g>
+
+  <rect x="70" y="478" width="1140" height="70" rx="14" fill="#111827" stroke="#526175"/>
+  <text x="96" y="509" class="small">Decision rule</text>
+  <text x="96" y="535" class="sub">If defect topology adds no value beyond mean clearance, use the simpler model and stop.</text>
+</svg>

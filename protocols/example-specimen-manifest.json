@@ -1,0 +1,32 @@
+{
+  "manifest_version": "0.1-draft",
+  "study_id": "experiment-01",
+  "specimen_id": "planned-rigid-insert-example",
+  "run_id": "planned-example-not-executed",
+  "evidence_state": "planned-example",
+  "geometry_revision": "TBD-before-fabrication",
+  "manufacturing_process": "TBD-after-design-review",
+  "material": "TBD-after-design-review",
+  "closure": {
+    "type": "rigid-adjustable-reference",
+    "preload_n": null
+  },
+  "deployment_cycle": 0,
+  "defect_field": {
+    "family": "two-lobe",
+    "mean_clearance_mm": null,
+    "measurement_method": "TBD-after-metrology-qualification"
+  },
+  "rotor_system": {
+    "rotor_id": "TBD-pinned-rotor",
+    "motor_id": "TBD-pinned-motor",
+    "controller_id": "TBD-pinned-controller"
+  },
+  "operating_point": {
+    "control_basis": "commissioning",
+    "target_value": null,
+    "target_units": "TBD"
+  },
+  "instruments": [],
+  "raw_data_path": "data/raw/experiment-01/specimen-id/run-id/"
+}
