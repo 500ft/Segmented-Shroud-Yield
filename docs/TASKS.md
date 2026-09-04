@@ -4,10 +4,11 @@
 > shroud. Priority flows from causal isolation, measurement credibility, and executability. A
 > simpler model or guard classification is allowed to win.
 
-Generated from a graph audit of commit `84b38ff`. The graph contains 197 nodes across 15
-communities and identifies Experiment 01 as the dominant bridge from prior art and hypotheses to
-yield claims. It also exposes measurement-system qualification as the upstream dependency for
-every physical result. No dates or estimates appear, by design.
+Informed by a [source-reviewed directed dependency audit](research-dependency-audit.md) of
+commit `84b38ff`. Graphify supplied candidate relationships; only manually verified research
+dependencies were retained. Repository navigation, CI, schemas, generated tasks, and raw
+centrality counts are excluded from the published map. Novelty remains unresolved until SSY-01
+closes. No dates or estimates appear, by design.
 
 ## Two finish lines
 
@@ -311,11 +312,11 @@ duct, protective guard, or neither under the registered rules.
 
 ## Cross-cutting
 
-This task is not included in the 17 project-task count.
+These tasks are not included in the 17 project-task count.
 
 ### XC-01 · Reconcile the repository, portfolio, resume, and any paper abstract
 
-`hygiene` · executable after SSY-15
+`hygiene` · executable later · after SSY-15
 
 **Why it matters.** A simpler-model result or guard pivot changes the project's public identity.
 Conflicting descriptions would turn disciplined iteration into apparent overclaiming.
@@ -326,3 +327,20 @@ encounter the project.
 **Done when.** Every public claim, image, and number traces to the same committed artifact and
 evidence label; “performance duct” or “protective guard” appears only if its registered evidence
 exists.
+
+### XC-02 · Record the publication and disclosure path before adding implementation-sensitive detail
+
+`external` · executable now · before implementation-sensitive public disclosure
+
+**Why it matters.** This repository is public. A website publication can affect patent options,
+especially outside the United States, while ownership and disclosure obligations can depend on
+where and how future work is performed. Making a repository private later does not erase an
+earlier public disclosure.
+
+**What it adds.** A deliberate public-first, publication-first, or counsel-reviewed path instead
+of letting repository activity make the decision accidentally.
+
+**Done when.** The owner records the repository's first-public date and either records that no
+patent review is being pursued or consults the appropriate university technology-transfer office
+or qualified counsel before adding potentially enabling mechanism, geometry, or fabrication
+detail. This task is a process gate, not legal advice.

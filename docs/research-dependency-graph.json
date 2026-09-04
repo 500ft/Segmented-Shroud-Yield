@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "graph_kind": "source-reviewed-research-dependency-map",
+  "source_baseline": "84b38ff",
+  "directed": true,
+  "generated_tasks_excluded": true,
+  "token_usage": {
+    "status": "unavailable",
+    "input_tokens": null,
+    "output_tokens": null
+  },
+  "nodes": [
+    {"id": "candidate-gap", "label": "Candidate gap closeout", "task": "SSY-01", "source": "docs/prior-art.md"},
+    {"id": "measurement-requirements", "label": "Measurement requirements", "task": "SSY-02", "source": "docs/experiment-01-rigid-defect-duct.md"},
+    {"id": "defect-basis", "label": "Reference geometry and defect basis", "task": "SSY-03", "source": "docs/experiment-01-rigid-defect-duct.md"},
+    {"id": "rigid-cad", "label": "Rigid defect CAD", "task": "SSY-04", "source": "docs/experiment-01-rigid-defect-duct.md"},
+    {"id": "analysis-pipeline", "label": "Frozen analysis pipeline", "task": "SSY-05", "source": "docs/research-plan.md"},
+    {"id": "measurement-qualification", "label": "Installed measurement qualification", "task": "SSY-12", "source": "docs/experiment-01-rigid-defect-duct.md"},
+    {"id": "pilot", "label": "Rigid-duct pilot", "task": "SSY-13", "source": "docs/experiment-01-rigid-defect-duct.md"},
+    {"id": "confirmatory-freeze", "label": "Confirmatory contract freeze", "task": "SSY-14", "source": "docs/research-plan.md"},
+    {"id": "held-out-gate", "label": "Held-out defect-family gate", "task": "SSY-15", "source": "docs/research-plan.md"},
+    {"id": "simpler-rule", "label": "Mean-clearance rule", "task": "SSY-15-null", "source": "docs/research-plan.md"},
+    {"id": "closure-mechanisms", "label": "Closure-mechanism comparison", "task": "SSY-16", "source": "docs/research-plan.md"},
+    {"id": "performance-duct", "label": "Performance-duct candidate", "task": "SSY-16-positive", "source": "docs/claim-ledger.md"},
+    {"id": "guard-test", "label": "Separate guard experiment", "task": "SSY-17", "source": "docs/decision-log.md"},
+    {"id": "guard-or-neither", "label": "Protective guard or neither", "task": "SSY-17-result", "source": "docs/claim-ledger.md"}
+  ],
+  "edges": [
+    {"source": "candidate-gap", "target": "measurement-requirements", "relation": "bounds"},
+    {"source": "candidate-gap", "target": "defect-basis", "relation": "bounds"},
+    {"source": "measurement-requirements", "target": "rigid-cad", "relation": "constrains"},
+    {"source": "defect-basis", "target": "rigid-cad", "relation": "specifies"},
+    {"source": "measurement-requirements", "target": "analysis-pipeline", "relation": "constrains"},
+    {"source": "defect-basis", "target": "analysis-pipeline", "relation": "specifies"},
+    {"source": "rigid-cad", "target": "measurement-qualification", "relation": "provides-treatments"},
+    {"source": "measurement-requirements", "target": "measurement-qualification", "relation": "sets-gate"},
+    {"source": "measurement-qualification", "target": "pilot", "relation": "authorizes-data-collection"},
+    {"source": "analysis-pipeline", "target": "pilot", "relation": "analyzes"},
+    {"source": "pilot", "target": "confirmatory-freeze", "relation": "sizes-without-confirming"},
+    {"source": "confirmatory-freeze", "target": "held-out-gate", "relation": "preregisters"},
+    {"source": "held-out-gate", "target": "simpler-rule", "relation": "null-branch"},
+    {"source": "held-out-gate", "target": "closure-mechanisms", "relation": "positive-gate"},
+    {"source": "closure-mechanisms", "target": "performance-duct", "relation": "positive-joint-yield-gate"},
+    {"source": "held-out-gate", "target": "guard-test", "relation": "may-trigger-separate-preregistration"},
+    {"source": "closure-mechanisms", "target": "guard-test", "relation": "may-trigger-separate-preregistration"},
+    {"source": "guard-test", "target": "guard-or-neither", "relation": "independently-supports"}
+  ]
+}
