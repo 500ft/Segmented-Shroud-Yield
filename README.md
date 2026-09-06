@@ -1,5 +1,7 @@
 # Segmented Shroud Yield
 
+CAD development is now broken into [individual work orders](docs/CAD_PLAN.md) and a [CAD task ledger](docs/CAD_TASKS.csv). These are planned models, fixtures and release drawings—not completed CAD or hardware evidence.
+
 **Test whether deployment-generated seams, steps, and ovality let a folding rotor shroud retain both safe clearance and aerodynamic value.**
 
 [![CI](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml/badge.svg)](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml)

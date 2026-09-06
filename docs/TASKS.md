@@ -1,5 +1,9 @@
 # Segmented Shroud Yield — long-term research backlog
 
+## CAD decomposition of the research backlog
+
+[CAD_PLAN.md](CAD_PLAN.md) and [CAD_TASKS.csv](CAD_TASKS.csv) split SSY-04 into independently reviewable geometry and inspection tasks. SSY-CAD-01 through SSY-CAD-07 refine SSY-03/04; they do not duplicate completion status or close SSY-06. SSY-CAD-08/09 refine later mechanism work and remain behind the confirmed Experiment 01 continuation gate. The original 17 research-level tasks and dependency audit are unchanged; the nine CAD subtasks are a separate work breakdown with estimates and their own sole status ledger.
+
 The active 2026-09-05 integrity sprint is governed by [SPRINT_ROADMAP.md](SPRINT_ROADMAP.md)
 and the sole status ledger [SPRINT_TASKS.csv](SPRINT_TASKS.csv). This document
 retains long-term research dependencies; “executable now” means no intrinsic
