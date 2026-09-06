@@ -1,0 +1,10 @@
+{
+  "recorded_on_local": "2026-09-06",
+  "command": "python evidence/sprint-2026-09-05/evaluate_candidate.py",
+  "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+  "chunk_id": "f6d493",
+  "wall_time_seconds": 0.063549917,
+  "exit_code": 0,
+  "original_token_count": 377,
+  "output": "{\n  \"kind\": \"developer software counterexamples\",\n  \"cases\": [\n    {\n      \"id\": \"planned_null_clearance\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"zero_clearance\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest defect_field/mean_clearance_mm: 0 is less than or equal to the minimum of 0\"\n      ]\n    },\n    {\n      \"id\": \"planned_null_preload\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"zero_preload\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"instrument_not_array\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest instruments: {} is not of type 'array'\"\n      ]\n    },\n    {\n      \"id\": \"missing_instrument_calibration\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest instruments/0: 'calibration_id' is a required property\"\n      ]\n    },\n    {\n      \"id\": \"nonintegral_cycle\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest deployment_cycle: 1.5 is not of type 'integer'\"\n      ]\n    }\n  ],\n  \"denominator\": 7,\n  \"all_matched\": true\n}\n"
+}

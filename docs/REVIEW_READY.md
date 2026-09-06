@@ -1,0 +1,79 @@
+# Segmented-Shroud-Yield — partial handoff, local software ready for review
+
+Prepared 2026-09-05; resumed and checked 2026-09-06. Budget: six workload days,
+30 focused hours per repository; estimates are not recorded time spent.
+
+Canonical checkout: `/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield`.
+Remote: https://github.com/500ft/Segmented-Shroud-Yield.
+Branch: `sprint/evidence-integrity-20260905`.
+Base commit: `971eadb6b778c5fda764894235490dab2ad345e2`.
+Final commit: this review packet's containing commit; its SHA is reported in the PR
+because a commit cannot embed its own identity. No deployment, publication,
+outreach or spending occurred. Original checkout/user changes were preserved.
+Base includes the existing unmerged task PR #1 head; it is not origin/main.
+
+[Roadmap](SPRINT_ROADMAP.md) · [Authoritative ledger](SPRINT_TASKS.csv) ·
+[Progress](SPRINT_PROGRESS.md) · [Selected candidate hashes](../evidence/sprint-2026-09-05/candidate.json).
+
+## Completed deliverables and evidence
+
+The checker enforces specimen JSON Schema and finite values. Duct performance and protective-guard qualification now have independent evidence paths. Held-out-family predictions require descriptor support or explicitly specified physical extrapolation.
+
+Implementation: [checker](../scripts/check_repo_contract.py), [tests](../tests/test_manifest_validation.py), [research plan](research-plan.md), [roadmap](../ROADMAP.md), [first experiment](experiment-01-rigid-defect-duct.md).
+
+- [Baseline identity, commands and outputs](../evidence/sprint-2026-09-05/baseline.json).
+- [Original failing evidence](../evidence/sprint-2026-09-05/manifest-red.json).
+- [Implementation checks](../evidence/sprint-2026-09-05/implementation-green.json).
+- [Final verification](../evidence/sprint-2026-09-05/final-checks.json).
+- [Predeclared evaluation procedure](../evidence/sprint-2026-09-05/evaluation-plan.md),
+  [retained replay](../evidence/sprint-2026-09-05/evaluate_candidate.py),
+  [actual outputs](../evidence/sprint-2026-09-05/evaluation.json).
+
+- [Consumer delivery evidence](../evidence/sprint-2026-09-05/consumer.json).
+
+7 tests passed in development and clean consumer environments; repository contract passed; 7/7 additional metadata cases matched.
+
+Design and intake only; no CAD, rotor test, trained response model or protective qualification. Null planned measurements remain valid metadata, not observed values.
+
+## Reproduce
+
+Run from the canonical checkout using the recorded Python3.11 environment and
+repository dependencies. The local pytest workaround stubs readline before import;
+it is not a skipped test or changed product requirement.
+
+```sh
+python -m unittest discover -s tests -v
+python scripts/check_repo_contract.py
+python evidence/sprint-2026-09-05/evaluate_candidate.py
+git diff --check
+```
+
+
+
+Delivery route: a clean temporary venv installed pinned jsonschema4.26.0 and executed absolute checker/test paths from /private/tmp. Resolved transitive versions are retained in consumer.json. The checker uses the schema-declared dialect via validator_for; [official validation API](https://python-jsonschema.readthedocs.io/en/stable/validate/) is the interface reference.
+
+No separate configured lint/typecheck is claimed. Syntax checks are compilation,
+not static typing. Saved output truncation, if present, is indicated by the tool
+result metadata; no omitted output is called a full log.
+
+## Evaluation meaning and remaining work
+
+Selected implementation/protocol hashes and expectations were saved before the
+additional cases ran. Existing tests, reviewed fixtures and reviewer-discovered
+bugs are development material. All additional cases were retained. These small
+developer-selected checks establish behavior on those inputs, not independent
+scientific validation or general accuracy. Another agent is not a human reviewer.
+External feedback: pending.
+
+1. Owner chooses rotor/stand/metrology access and closes the exact-gap prior-art task.
+2. Define and qualify the rigid-defect apparatus before studying a folding mechanism.
+3. Guard protection requires its own approved tests; aerodynamic failure does not confer a fallback success.
+
+Next action: Owner resource choice, then long-term SSY-01 exact-gap closeout and rigid-defect metrology/CAD work order.
+
+Evidence-supported portfolio bullet: “Built schema-checked specimen intake and an identifiable defect-study plan separating aerodynamic yield from unproven protective performance.”
+This concerns engineering quality, not adoption or measured scientific performance.
+
+## Ready-to-send review request
+
+“Review Segmented-Shroud-Yield against docs/SPRINT_ROADMAP.md. Repository: /Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield. Base commit: 971eadb6b778c5fda764894235490dab2ad345e2. Final commit: PR head (see GitHub PR). Review index: docs/REVIEW_READY.md. Incomplete work: Owner chooses rotor/stand/metrology access and closes the exact-gap prior-art task. Define and qualify the rigid-defect apparatus before studying a folding mechanism. Guard protection requires its own approved tests; aerodynamic failure does not confer a fallback success. Reproduce the changed behaviors and counterexamples, rerun appropriate checks, and assess the code and evidence independently. Review first; make further changes only if requested.”

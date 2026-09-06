@@ -1,0 +1,74 @@
+{
+  "recorded_on_local": "2026-09-06",
+  "selection": "Seven developer-selected metadata boundary variants; expected outcomes below precede execution. Original examples/tests already inspected. These are not independent research evaluation.",
+  "source_fixture": "protocols/example-specimen-manifest.json",
+  "schema": "protocols/specimen-manifest.schema.json",
+  "cases": [
+    {
+      "id": "planned_null_clearance",
+      "path": [
+        "defect_field",
+        "mean_clearance_mm"
+      ],
+      "value": null,
+      "accept": true
+    },
+    {
+      "id": "zero_clearance",
+      "path": [
+        "defect_field",
+        "mean_clearance_mm"
+      ],
+      "value": 0,
+      "accept": false
+    },
+    {
+      "id": "planned_null_preload",
+      "path": [
+        "closure",
+        "preload_n"
+      ],
+      "value": null,
+      "accept": true
+    },
+    {
+      "id": "zero_preload",
+      "path": [
+        "closure",
+        "preload_n"
+      ],
+      "value": 0,
+      "accept": true
+    },
+    {
+      "id": "instrument_not_array",
+      "path": [
+        "instruments"
+      ],
+      "value": {},
+      "accept": false
+    },
+    {
+      "id": "missing_instrument_calibration",
+      "path": [
+        "instruments"
+      ],
+      "value": [
+        {
+          "channel": "thrust",
+          "instrument_id": "mock"
+        }
+      ],
+      "accept": false
+    },
+    {
+      "id": "nonintegral_cycle",
+      "path": [
+        "deployment_cycle"
+      ],
+      "value": 1.5,
+      "accept": false
+    }
+  ],
+  "limitations": "Null planned fields are schema-valid, not measurements. Descriptor-family transfer is a manual design condition, not implemented model inference."
+}
