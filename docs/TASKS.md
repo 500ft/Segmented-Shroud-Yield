@@ -2,7 +2,7 @@
 
 ## CAD decomposition of the research backlog
 
-[CAD_PLAN.md](CAD_PLAN.md) and [CAD_TASKS.csv](CAD_TASKS.csv) split SSY-04 into independently reviewable geometry and inspection tasks. SSY-CAD-01 through SSY-CAD-07 refine SSY-03/04; they do not duplicate completion status or close SSY-06. SSY-CAD-08/09 refine later mechanism work and remain behind the confirmed Experiment 01 continuation gate. The original 17 research-level tasks and dependency audit are unchanged; the nine CAD subtasks are a separate work breakdown with estimates and their own sole status ledger.
+[CAD_PLAN.md](CAD_PLAN.md) and [CAD_TASKS.csv](CAD_TASKS.csv) split SSY-04 into independently reviewable geometry and inspection tasks. SSY-CAD-01 through SSY-CAD-07 refine SSY-03/04; they do not duplicate completion status or close SSY-06. SSY-CAD-08/09 have details and estimates withheld until XC-02 closes. SSY-CAD-10 covers reproducible geometry tooling. The original 17 research-level tasks and dependency audit are unchanged; the ten CAD entries are a separate, currently parked work breakdown. Cross-ledger dependencies are checked through CAD_DEPENDENCIES.json. Main-branch placement remains an unresolved owner decision.
 
 The active 2026-09-05 integrity sprint is governed by [SPRINT_ROADMAP.md](SPRINT_ROADMAP.md)
 and the sole status ledger [SPRINT_TASKS.csv](SPRINT_TASKS.csv). This document
