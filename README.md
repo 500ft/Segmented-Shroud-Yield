@@ -90,6 +90,7 @@ See the complete [`Experiment 01 protocol`](docs/experiment-01-rigid-defect-duct
 The current executable work checks documentation integrity and protocol structure; it does **not** analyze a rotor.
 
 ```bash
+python -m pip install -r requirements.txt
 python scripts/check_repo_contract.py
 python -m unittest discover -s tests -v
 ```

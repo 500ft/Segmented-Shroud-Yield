@@ -1,4 +1,9 @@
-# Segmented Shroud Yield — tasks to completion
+# Segmented Shroud Yield — long-term research backlog
+
+The active 2026-09-05 integrity sprint is governed by [SPRINT_ROADMAP.md](SPRINT_ROADMAP.md)
+and the sole status ledger [SPRINT_TASKS.csv](SPRINT_TASKS.csv). This document
+retains long-term research dependencies; “executable now” means no intrinsic
+hardware dependency, not completed predecessors. It is not the active ready queue.
 
 > **Objective.** Produce the strongest, most honestly packaged evidence—not a finished flying
 > shroud. Priority flows from causal isolation, measurement credibility, and executability. A
@@ -14,7 +19,8 @@ closes. No dates or estimates appear, by design.
 
 **Ceiling.** A defect-aware model predicts held-out rigid-duct behavior, replicated closure
 mechanisms propagate measured deployment variation into that model, and joint aero-mechanical
-yield supports a registered performance-duct, protective-guard, or neither classification.
+yield supports performance-duct assessment. A protective-guard classification
+additionally requires the independent SSY-17 evidence; otherwise protection is unknown.
 
 **Floor.** A citable research-design package containing a closed novelty boundary, qualified
 measurement requirements, parametric equal-mean-clearance defect CAD, an executable analysis
@@ -24,7 +30,7 @@ stated plainly.
 The floor is the finish line available without a rotor stand, fabrication access, or laboratory
 approval. No planned specimen or synthetic fixture is counted as physical evidence.
 
-_17 project tasks · 6 Tier 0 · 9 executable now._
+_17 long-term project tasks · 6 Tier 0 · readiness requires completed predecessors._
 
 **Gate types.** `preregister` — commit a decision before the data it judges; `external` —
 requires a person, facility, fabrication process, or instrument outside this repository;

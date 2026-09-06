@@ -47,7 +47,7 @@ What fraction of deployments simultaneously lock, preserve safe dynamic clearanc
 - **H1:** At equal mean clearance, at least one deployment-specific defect produces a response difference greater than measurement uncertainty.
 - **H2:** A defect-aware model reduces held-out prediction error relative to a mean-clearance baseline.
 - **H3:** A self-centering, preload-controlled closure reduces deployment-to-deployment radial reconstruction variance relative to an ordinary over-center closure at matched mass and nominal geometry.
-- **H4:** Within a registered operating envelope, the joint aero-mechanical yield can be estimated with uncertainty narrow enough to support a performance-duct or guard classification.
+- **H4:** Within a registered operating envelope, the joint aero-mechanical yield can be estimated with uncertainty narrow enough to assess performance-duct qualification. Protective-guard qualification is a separate hypothesis requiring independent impact, containment, deflection, deployment and aerodynamic-penalty evidence.
 
 Any hypothesis may fail and remains in the report.
 
@@ -97,6 +97,28 @@ The deployable mechanism is not part of the minimum aerodynamic experiment. It p
 - Hold out a defect family, not merely random rows from the same condition.
 - Report model calibration and uncertainty, not only point prediction error.
 - Freeze final acceptance thresholds after a pilot; exclude pilot observations from confirmation.
+
+### Model-identifiability gate before family holdout
+
+Register the predictor basis, training support and prediction-error denominator
+before choosing the held-out family. A seam-only predictor that is zero in every
+training condition has an unidentified empirical coefficient; a held-out seam
+test cannot validate a coefficient that was never estimated.
+
+For empirical models, cover every fitted descriptor in training and hold out
+specified combinations, amplitudes or specimens. Claim whole-family transfer
+only when a preregistered physical model constrains the unseen mechanism, or
+explicitly report the family as an extrapolation challenge with its parameter
+identifiability limitation. Do not relabel a random-row split as family holdout.
+If neither route is justified, stop the transfer claim and report within-support
+prediction only. This gate must close before confirmatory data are generated.
+
+Primary percentage prediction error means absolute electrical-power prediction
+error divided by observed electrical power at matched thrust, aggregated first
+by independent specimen and then by held-out condition. Define operating-point
+weights prospectively. It is not error divided by a potentially near-zero duct
+benefit. Relative model improvement uses the same endpoint and is undefined when
+the mean-clearance baseline error is zero.
 
 ## Scope
 

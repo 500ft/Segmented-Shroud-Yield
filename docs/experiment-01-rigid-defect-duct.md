@@ -52,10 +52,16 @@ The primary aerodynamic comparison is electrical power required at matched thrus
 
 - Fit a mean-clearance baseline model using training conditions.
 - Fit a defect-aware model using mean clearance plus registered seam and harmonic descriptors.
-- Hold out an entire defect family from fitting.
+- Before family holdout, close the model-identifiability gate in docs/research-plan.md: fitted descriptors need training support; an unseen mechanism requires a specified physical extrapolation model. Otherwise restrict the claim to supported conditions.
 - Compare held-out prediction error and interval coverage.
 - Report response differences relative to measurement uncertainty.
 - Inspect residuals by temperature, operating point, and randomized test order.
+
+Prediction error is normalized by observed electrical power at matched thrust,
+not by the small difference between duct and open-rotor performance. Register
+specimen-level aggregation and operating-point weights before confirmation.
+If the mean-clearance baseline error is zero, relative improvement is undefined,
+not an infinite gain. No protective-guard conclusion follows from this experiment.
 
 ## Provisional engineering gates
 
