@@ -1,0 +1,23 @@
+{
+  "recorded_on_local": "2026-09-06",
+  "base_commit": "971eadb6b778c5fda764894235490dab2ad345e2",
+  "branch": "sprint/evidence-integrity-20260905",
+  "status": "uncommitted selected-source candidate; not public preregistration",
+  "scope": "Selected implementation/protocol bytes frozen before developer counterexample outputs; hashes do not establish independent evidence",
+  "files": {
+    "scripts/check_repo_contract.py": "6bf29a592523eda93c1fe2505be544b2bf81d8aabfd2ec6794c4c4e6271409d4",
+    "tests/test_manifest_validation.py": "dd73f381c8458bd80487ca30a499dfa2b19d6e6d5a9c5705f75df331714a5a91",
+    "requirements.txt": "a055435643535c44c2a63ca44b6c1eed8c1bd5b76ae025c9b0c5a3565d3387ff",
+    ".github/workflows/ci.yml": "36d3484a1fbfe5d5de52655aa12272bc0a7bb38516aca4ac647d61922530b4e6",
+    "protocols/specimen-manifest.schema.json": "d1701689f7a498019c767b967ff21e4033a3ab0d86331cd6d68f7ddc4cc88be5",
+    "protocols/example-specimen-manifest.json": "5c6797100be215f7d255cd9434eaf7795f1f87a9ea93833756ef266dabbb7d76",
+    "README.md": "97a5a4d941bded267d8282f662b11da3c2bc6f1ea78f0cb20980d58969833924",
+    "ROADMAP.md": "8e0b1703b6aa9cf66cb4733c9de58d5009738d0b2881525b8f800c1c217f425a",
+    "docs/TASKS.md": "319133025a8a16dc2409bb0c7fa5008a5e828fc159162c6cf3b7d58d05d3d7b6",
+    "docs/research-plan.md": "907e8d002267b96029652c9fccbc49ede2be14b4913f17eea91ddd9368cea8b7",
+    "docs/experiment-01-rigid-defect-duct.md": "c9b77ad27289467a5348614959c1986725531edc2c02de5cd5db5406707ba483",
+    "evidence/sprint-2026-09-05/evaluation-plan.md": "74e82e1d49085b88c665cc5a07e385695ceb6c36dc0e3e5cdfb3181e90cd3480",
+    "evidence/sprint-2026-09-05/evaluate_candidate.py": "13b9817ad85d2d0aede83a23596118e02c437e51443b9113ca35adf07a467e8b",
+    "evidence/sprint-2026-09-05/evaluation-cases.json": "749829b00c28d360d05161b253fa100a6990b50bc008741b3a2caeb7235e802f"
+  }
+}

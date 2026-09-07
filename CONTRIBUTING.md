@@ -19,3 +19,12 @@ python -m unittest discover -s tests -v
 ```
 
 Physical contributions additionally require an approved rotor-stand risk assessment. A contribution to this repository is not authorization to operate rotating hardware.
+
+## Public disclosure boundary
+
+This is a public repository. Before contributing potentially enabling mechanism, geometry, or
+fabrication detail that may be intended for patent protection, complete
+[`XC-02`](docs/TASKS.md#xc-02--record-the-publication-and-disclosure-path-before-adding-implementation-sensitive-detail)
+and obtain appropriate guidance. NYU-affiliated contributors can start with
+[Technology Opportunities &amp; Ventures](https://tov.med.nyu.edu/for-innovators/intellectual-property-101/).
+This repository does not provide legal advice.

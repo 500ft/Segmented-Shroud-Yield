@@ -31,7 +31,7 @@ The project advances only when the preceding measurement or model gate closes.
 - Compare open rotor, monolithic duct, and adjustable rigid duct.
 - Test uniform clearance, two-lobe ovality, seam opening, and local step conditions.
 - Randomize condition order and compare at matched thrust.
-- Hold out one defect family from model fitting.
+- Close the model-identifiability gate in docs/research-plan.md before choosing a family holdout. Distinguish supported empirical interpolation from physically constrained extrapolation.
 
 **Exit gate:** a defect-aware model improves held-out error by at least 20% over a mean-clearance model and reaches below 10% prediction error.
 
@@ -55,7 +55,12 @@ The project advances only when the preceding measurement or model gate closes.
 - Freeze the defect-to-performance model.
 - Predict held-out mechanism specimens or an unseen defect family.
 - Estimate deployment, lock, clearance, performance, and joint yield with uncertainty.
-- Classify the device as performance duct, protective guard, or neither under registered criteria.
+- Assess performance-duct qualification under registered aero-mechanical criteria. Failed aerodynamic qualification leaves protective performance unknown.
+
+**Independent guard gate:** a protective-guard label requires separate registered
+impact, containment, deflection, deployment/lock and power-penalty tests. Those
+tests may be deferred only if the guard claim is also deferred. An aerodynamic
+null result does not establish protection.
 
 ## Stage 5 — Optional extensions
 
@@ -63,7 +68,7 @@ These do not block the minimum publishable core:
 
 - Second rotor scale
 - Thermal and vibration aging
-- Guard impact and blade-containment testing
+- Guard impact and blade-containment testing (optional project extension; mandatory before any protective-guard claim)
 - Acoustics
 - Free-flight integration
 - In-flight transformation

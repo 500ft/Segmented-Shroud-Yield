@@ -1,17 +1,17 @@
 # Segmented Shroud Yield
 
+**Test whether deployment-generated seams, steps, and ovality let a folding rotor shroud retain both safe clearance and aerodynamic value.**
+
 [![CI](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml/badge.svg)](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml)
 ![Status: research design](https://img.shields.io/badge/status-research%20design-415a77)
 ![Evidence: no results yet](https://img.shields.io/badge/evidence-no%20results%20yet-6b7280)
 [![License: MIT](https://img.shields.io/badge/license-MIT-276c6b)](LICENSE)
 
-**A research plan for connecting deployment-generated defects in segmented rotor shrouds to dynamic clearance, rubbing risk, and thrust-per-power.**
+**[Research question](#research-question) · [First experiment](#first-experiment) · [Evidence boundary](#evidence-boundary) · [Dependency audit](docs/research-dependency-audit.md) · [Roadmap](ROADMAP.md)**
 
-**[Research question](#research-question) · [First experiment](#first-experiment) · [Evidence boundary](#evidence-boundary) · [Roadmap](ROADMAP.md)**
+![The planned study tests rigid defect geometry before closure mechanisms, stops at a simpler mean-clearance rule when topology adds no value, and requires a separate guard experiment after a failed duct claim](assets/segmented-shroud-overview.svg)
 
-![Conceptual chain from latch variation through segmented-shroud defects to aerodynamic and strike outcomes](assets/segmented-shroud-overview.svg)
-
-*Conceptual method diagram—not a prototype or result. Evidence state: **planned**. No shroud specimen, aerodynamic measurement, or rubbing test has been completed for this repository.*
+*Conceptual decision diagram—not a prototype or result. Condition: proposed rigid-defect and mechanism study. Evidence state: **planned**. No shroud specimen, aerodynamic measurement, or rubbing test has been completed for this repository.*
 
 ## Overview
 
@@ -26,13 +26,15 @@ A folding shroud must reconstruct a useful rotor duct repeatedly, not merely loc
 | **Current evidence** | Literature and protocol design only |
 | **Physical testing** | Not started; requires qualified metrology and a guarded rotor stand |
 
+**Novelty status:** unresolved. The existing literature map defines a candidate gap, but [`SSY-01`](docs/TASKS.md#ssy-01--close-the-exact-gap-and-measurement-method-search) must close the systematic literature and patent search before any novelty claim is strengthened.
+
 ## Research question
 
 > At equal average clearance, do segmented-shroud defect topology and closure variation explain aerodynamic performance and rubbing risk better than a mean-clearance-only model?
 
 The working hypothesis can fail cleanly. If seams and ovality add no predictive value beyond average clearance inside the tested envelope, a simpler tolerance rule should replace the full segmented-defect model.
 
-## Proposed method
+## How the study works
 
 1. Qualify the clearance and thrust/power measurement systems.
 2. Use an adjustable rigid duct to isolate uniform clearance, ovality, seams, and local steps.
@@ -88,9 +90,14 @@ See the complete [`Experiment 01 protocol`](docs/experiment-01-rigid-defect-duct
 The current executable work checks documentation integrity and protocol structure; it does **not** analyze a rotor.
 
 ```bash
+python -m pip install -r requirements.txt
 python scripts/check_repo_contract.py
 python -m unittest discover -s tests -v
 ```
+
+## Status and next gate
+
+The research-design package and integrity checks exist; CAD, specimens, and every computational or measured result remain pending. The next gate is the exact-gap and measurement-method search in [`SSY-01`](docs/TASKS.md#ssy-01--close-the-exact-gap-and-measurement-method-search), followed by a frozen uncertainty budget and defect basis. The [directed dependency audit](docs/research-dependency-audit.md) shows why the closure mechanism and protective-guard branches require separate positive evidence.
 
 ## Documentation
 
@@ -102,6 +109,8 @@ python -m unittest discover -s tests -v
 | [`docs/claim-ledger.md`](docs/claim-ledger.md) | Permitted language for each evidence state |
 | [`docs/data-and-figures.md`](docs/data-and-figures.md) | Planned data lineage and visual-evidence rules |
 | [`docs/decision-log.md`](docs/decision-log.md) | Decisions, alternatives, and pivot logic |
+| [`docs/research-dependency-audit.md`](docs/research-dependency-audit.md) | Source-reviewed directed claim and gate map, including graph limitations |
+| [`docs/TASKS.md`](docs/TASKS.md) | Tiered execution plan with simpler-model, duct, guard, and parked branches |
 | [`ROADMAP.md`](ROADMAP.md) | Gate-driven path from metrology to possible mechanism validation |
 
 ## Repository map

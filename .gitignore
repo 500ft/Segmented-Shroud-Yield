@@ -19,3 +19,4 @@ results/generated/
 *.stp
 *.f3d
 *.FCStd
+graphify-out/

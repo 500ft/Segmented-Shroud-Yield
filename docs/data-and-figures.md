@@ -2,7 +2,8 @@
 
 ## Current state
 
-There are no CAD, FEA, CFD, or measured results in this repository. The only image is an authored conceptual method diagram.
+There are no CAD, FEA, CFD, or measured results in this repository. The current visuals are an
+authored conceptual decision diagram and a source-reviewed dependency map; neither is a result.
 
 ## Planned data stages
 
@@ -46,3 +47,4 @@ Color is never the only semantic channel. Reference conditions use solid lines; 
 | ID | Artifact | Claim | Evidence state |
 | --- | --- | --- | --- |
 | SSY-00 | [`assets/segmented-shroud-overview.svg`](../assets/segmented-shroud-overview.svg) | Explains the proposed causal chain only | Planned / conceptual |
+| SSY-AUDIT-01 | [`docs/research-dependency-audit.md`](research-dependency-audit.md#directed-dependency-map) | Explains the source-reviewed task and gate order | Planned / source-reviewed |

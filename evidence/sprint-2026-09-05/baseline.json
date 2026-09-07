@@ -1,0 +1,37 @@
+{
+  "recorded_on": "2026-09-05",
+  "stage": "baseline",
+  "repo": "Segmented-Shroud-Yield",
+  "canonical_checkout": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+  "original_checkout": "/Users/redhose/Segmented-Shroud-Yield",
+  "identity": {
+    "command": "git rev-parse HEAD; git branch --show-current; git status --short; python --version; node --version",
+    "chunk_id": "e5bec2",
+    "wall_time_seconds": 0.000002958,
+    "exit_code": 0,
+    "original_token_count": 25,
+    "output": "971eadb6b778c5fda764894235490dab2ad345e2\nsprint/evidence-integrity-20260905\nPython 3.11.8\nv22.21.0\n"
+  },
+  "checks": [
+    {
+      "repo": "Segmented-Shroud-Yield",
+      "cwd": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "command": "python scripts/check_repo_contract.py",
+      "chunk_id": "5a44ea",
+      "wall_time_seconds": 0.000001459,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "Repository contract: PASS\nEvidence state: research design; no study results\n"
+    },
+    {
+      "repo": "Segmented-Shroud-Yield",
+      "cwd": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "command": "python -m unittest discover -s tests -v",
+      "chunk_id": "a90266",
+      "wall_time_seconds": 0.000001333,
+      "exit_code": 0,
+      "original_token_count": 128,
+      "output": "test_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes) ... ok\ntest_example_is_unambiguously_not_a_result (test_repo_contract.RepositoryContractTests.test_example_is_unambiguously_not_a_result) ... ok\ntest_research_dependency_graph_has_no_dangling_endpoints (test_repo_contract.RepositoryContractTests.test_research_dependency_graph_has_no_dangling_endpoints) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.043s\n\nOK\n"
+    }
+  ]
+}

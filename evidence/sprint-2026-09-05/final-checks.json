@@ -1,0 +1,51 @@
+{
+  "status": "recorded",
+  "recorded_on_local": "2026-09-06",
+  "results": [
+    {
+      "command": "python -m compileall -q scripts tests",
+      "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "chunk_id": "d6393c",
+      "wall_time_seconds": 0.000002708,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "chunk_id": "fb0372",
+      "wall_time_seconds": 0.188634291,
+      "exit_code": 0,
+      "original_token_count": 265,
+      "output": "test_declared_example_remains_valid (test_manifest_validation.ManifestValidationTests.test_declared_example_remains_valid) ... ok\ntest_nested_required_field_is_enforced (test_manifest_validation.ManifestValidationTests.test_nested_required_field_is_enforced) ... ok\ntest_schema_rejects_invalid_nested_values (test_manifest_validation.ManifestValidationTests.test_schema_rejects_invalid_nested_values) ... ok\ntest_unknown_top_level_field_is_rejected (test_manifest_validation.ManifestValidationTests.test_unknown_top_level_field_is_rejected) ... ok\ntest_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes) ... ok\ntest_example_is_unambiguously_not_a_result (test_repo_contract.RepositoryContractTests.test_example_is_unambiguously_not_a_result) ... ok\ntest_research_dependency_graph_has_no_dangling_endpoints (test_repo_contract.RepositoryContractTests.test_research_dependency_graph_has_no_dangling_endpoints) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.214s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/check_repo_contract.py",
+      "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "chunk_id": "80cf8e",
+      "wall_time_seconds": 0.000004,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "Repository contract: PASS\nEvidence state: research design; no study results\n"
+    },
+    {
+      "command": "python evidence/sprint-2026-09-05/evaluate_candidate.py",
+      "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "chunk_id": "5ee83f",
+      "wall_time_seconds": 0.000003166,
+      "exit_code": 0,
+      "original_token_count": 377,
+      "output": "{\n  \"kind\": \"developer software counterexamples\",\n  \"cases\": [\n    {\n      \"id\": \"planned_null_clearance\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"zero_clearance\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest defect_field/mean_clearance_mm: 0 is less than or equal to the minimum of 0\"\n      ]\n    },\n    {\n      \"id\": \"planned_null_preload\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"zero_preload\",\n      \"expected_accept\": true,\n      \"observed_accept\": true,\n      \"matches\": true,\n      \"errors\": []\n    },\n    {\n      \"id\": \"instrument_not_array\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest instruments: {} is not of type 'array'\"\n      ]\n    },\n    {\n      \"id\": \"missing_instrument_calibration\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest instruments/0: 'calibration_id' is a required property\"\n      ]\n    },\n    {\n      \"id\": \"nonintegral_cycle\",\n      \"expected_accept\": false,\n      \"observed_accept\": false,\n      \"matches\": true,\n      \"errors\": [\n        \"manifest deployment_cycle: 1.5 is not of type 'integer'\"\n      ]\n    }\n  ],\n  \"denominator\": 7,\n  \"all_matched\": true\n}\n"
+    },
+    {
+      "command": "git diff --check",
+      "working_directory": "/Users/redhose/Developer/research-sprints/2026-09-05/Segmented-Shroud-Yield",
+      "chunk_id": "62cf17",
+      "wall_time_seconds": 0.000002375,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ]
+}
