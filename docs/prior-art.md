@@ -1,5 +1,13 @@
 # Prior-Art Boundary
 
+## 2026-09-08 source and metrology review
+
+[Dated first-pass review](prior-art-search-2026-09-08.md) records executed queries,
+10 screened primary records, exclusions, a measurement-method shortlist and
+unavailable full texts. Broad prior art is confirmed; the rigid-defect experiment
+remains a supported candidate gap within this retrieval, not established novelty.
+SSY-D01 completes this bounded pass, not full SSY-01 or disclosure gate XC-02.
+
 This source map defines what the repository must not overclaim. It is not an exhaustive systematic review or patent search.
 
 ## Established ingredients
