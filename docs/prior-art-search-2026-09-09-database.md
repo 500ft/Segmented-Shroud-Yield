@@ -1,59 +1,75 @@
-# SSY-D02 — native-database search export, 2026-09-09
+# SSY-D02 — database export integrity review, 2026-09-09
 
-Follow-up named by [SSY-D01](prior-art-search-2026-09-08.md): "run a native scholarly-database
-search where access is available; retain a screened export." This is the **export and recall
-check**, not a screen. Nothing here closes the parent novelty gate or any owner gate.
+**Partial evidence; D02 acceptance is blocked.** The historical export is retained,
+but its claimed recall and complete per-query provenance do not survive an offline
+review. This revision supersedes the original day-2 interpretation; it does not
+rewrite the original JSON/CSV or treat a rerun as a reconstruction of that acquisition.
 
-## What was run
+## What is verified from the committed export
 
-Three native databases through their public APIs, with the day-1 web-index queries rewritten as
-plain keyword queries (no `site:` operators; patents excluded — no patent database is reachable
-from this environment). Retrieved 2026-09-09T02:32:55Z.
+| Observation | Value and interpretation |
+| --- | --- |
+| Stored rows / distinct literal identifiers | 499 / 499; not 499 distinct studies |
+| Rows without any successful logged database/query pair | 50, all labeled arXiv |
+| arXiv query log | five HTTP 429 failures and one HTTP 503 failure |
+| Explicitly comparable known day-1 anchors present | 3; incomplete anchor set, not a recall ratio |
+| Candidate file | 25 rows, still UNSCREENED; original ranking is provisional |
 
-| database | queries attempted | succeeded | unique records retained |
-| --- | ---: | ---: | ---: |
-| Crossref | 6 | 6 | 197 |
-| OpenAlex | 6 | 6 | 252 |
-| arXiv search API | 6 | 0 | 50 |
+Sources: [immutable export JSON](../evidence/task-2026-09-09/database-export.json),
+[CSV](../evidence/task-2026-09-09/database-export.csv), and the new
+[offline derived audit](../evidence/task-2026-09-09-review/export-audit.json).
+The audit checks each hit's database/query against the query log. A query string
+attached to a hit is not evidence of an observed successful request. Missing
+request provenance must be recovered from the original acquisition record or
+left unresolved; do not backfill a success count from the rows.
 
-**arXiv's search endpoint throttled this run** (HTTP 429 on 6 of 6 queries despite 4–32 s
-spacing and retries). Its id-lookup endpoint worked, so the arXiv leg is **incomplete, not
-absent** — re-run `evidence/task-2026-09-09/rerun_search.py` from a network that arXiv does
-not rate-limit. Raw export: [`database-export.json`](../evidence/task-2026-09-09/database-export.json)
-/ [`.csv`](../evidence/task-2026-09-09/database-export.csv) (499 unique records, every one tagged with the query that produced it).
+The original 1/6 count missed two sources already named in day 1:
+`10.1016/j.ast.2023.108866` (S2, also explicit day-1 query #9) and
+`10.1155/2017/4168150` (S5). Both appear in the stored export but were marked
+not already screened. Together with S1, there are three verified known-DOI
+matches. Three unqueried patents were included in the old denominator; S3/S4/
+S6/S7 identifier resolution remains incomplete. Thus neither 1/6 nor a revised
+3/6 is a defensible recall estimate. The claimed discovery-population divergence
+is withdrawn.
 
-## Recall check against the day-1 screened set — the finding
+The raw flags and candidate shortlist are historical, not corrected scientific
+judgments. Do not count the same preprint and journal version as separate studies
+without manual reconciliation. Exact-title matches are review candidates, not
+automatic identity proofs. Keyword scores use uneven title/abstract availability
+and are only a reading aid, not a relevance or importance grade.
 
-Day 1 screened 10 sources, 6 of them resolvable to a database identifier. This run
-retrieved **1 of 6**: doi:10.2322/tjsass.60.1.
+## Development performed
 
-The one recovered item is the journal DOI; the day-1 set is otherwise publisher PIIs and patents,
-which Crossref/OpenAlex return under DOIs that do not carry the PII, and patents are out of reach.
-As on the sibling project, native-database ranking and web-index discovery surface different
-populations; neither substitutes for the other.
+The [rerun tool](../evidence/task-2026-09-09/rerun_search.py) now:
 
-## New candidates — UNSCREENED
+- Requires a **new** output directory and refuses overwrite before network access.
+- Repeats only the recorded database/query pairs, not their Cartesian product.
+- Writes all three promised outputs; records every observed query/rank for a
+  deduplicated identifier, including source ID and abstract availability.
+- Distinguishes successful empty results from missing credentials, partial
+  failures and request errors; incomplete acquisitions exit 2.
+- Normalizes DOI/arXiv aliases and version suffixes, reports only known-anchor
+  matches, and leaves recall unavailable.
+- Offers a read-only audit of historical JSON. The historical audit intentionally
+  exits 1 for unresolved provenance; the regression tests pass by detecting it.
 
-[`candidates-unscreened.csv`](../evidence/task-2026-09-09/candidates-unscreened.csv) lists the 25 highest-scoring records not in the
-day-1 set, ranked by a **keyword triage** over title and abstract (weights in `rerun_search.py`).
-This is a reading order, not a relevance judgement: no candidate has been read against the
-day-1 rubric, and none is asserted to be prior art or to be irrelevant. Top five by score:
+The acquisition is a **new bounded protocol**, not an exact historical replay:
+original responses and complete request parameters were not retained. Current
+request caps are explicit in the tool. No live database rerun occurred in this
+review; offline tests do not establish API availability or search completeness.
+The [arXiv API manual](https://info.arxiv.org/help/api/user-manual.html) documents
+query construction and versioned identifiers; unchanged API availability still
+needs a real acquisition check.
 
-| # | id | year | title (truncated) | score |
-| --- | --- | --- | --- | ---: |
-| 1 | [doi:10.1115/gt2020-15403](https://doi.org/10.1115/gt2020-15403) | 2020 | Blade Tip Clearance Measurement Systems for High Speed Turbomachinery Applications and the | 10 |
-| 2 | [doi:10.1115/78-gt-164](https://doi.org/10.1115/78-gt-164) | 1978 | Turbine Blade Tip Clearance Measurement Utilizing Borescope Photography | 9 |
-| 3 | [doi:10.1115/1.3230742](https://doi.org/10.1115/1.3230742) | 1981 | Laser-Optical Blade Tip Clearance Measurement System | 9 |
-| 4 | [doi:10.1115/91-gt-164](https://doi.org/10.1115/91-gt-164) | 1991 | Turbine Blade Tip Clearance Improvement | 9 |
-| 5 | [doi:10.1115/2000-gt-0416](https://doi.org/10.1115/2000-gt-0416) | 2000 | Non-Uniform Flow in a Compressor due to Asymmetric Tip Clearance | 9 |
+## Better next step and what remains closed
 
+Keep day 1's focused, bounded source review. Before another large export:
+recover the missing acquisition provenance if available; complete a scholarly
+anchor registry with DOI/arXiv aliases and explicit exclusions; then screen the
+closest competitors under day 1's rubric. Preserve the historic corpus as an
+unreconciled input and save any new acquisition separately.
 
-## What this does and does not change
-
-- Adds a dated, reproducible native-database export with per-query provenance. Retained.
-- Establishes that the two discovery routes diverge on this topic, so the day-1 web-index set
-  cannot be assumed complete and the database set cannot be assumed to contain it.
-- Does **not** screen anything, close the novelty gate, touch patents, or read a full text. The
-  day-1 "Next" items — close-competitor full texts, native search where *institutional* access
-  exists (Scopus/WoS/IEEE Xplore), patent claims with qualified help — all remain open.
-- Does not authorise a simulator, fabrication or hardware campaign.
+Prioritize S2–S4 full texts and the measurement-method comparison before more mechanism detail. A rigid-defect comparison and an installed uncertainty budget remain the useful first research decision.
+No new paper was fully read in this review. Novelty, resources, measurement and
+owner gates stay open, including XC-02 disclosure authorization. No simulator,
+fabrication, rotor operation, safety verdict or patent clearance is authorized.

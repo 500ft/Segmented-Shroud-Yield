@@ -1,3 +1,12 @@
+# 2026-09-09 — review correction
+
+D02 is now blocked, not accepted as a complete acquisition. The retained export
+contains unexplained query provenance; no recall or route-divergence conclusion
+is established. Added offline audit and safe new-output rerun with explicit
+missing-credential/error states. Fifteen tests and the repository contract pass.
+[Review evidence](../evidence/task-2026-09-09-review/README.md). No raw exports,
+owner gates, screening verdicts, novelty clearance or disclosure path were changed.
+
 # Sprint progress — Segmented-Shroud-Yield
 
 ## 2026-09-09 — SSY-D02 native-database export
