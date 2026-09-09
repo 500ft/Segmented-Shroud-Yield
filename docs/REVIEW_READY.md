@@ -1,6 +1,12 @@
 # Segmented-Shroud-Yield — partial handoff, local software ready for review
 
-## Latest follow-up — 2026-09-08
+## Latest follow-up — 2026-09-09
+
+[SSY-D02 database export](../docs/prior-art-search-2026-09-09-database.md) adds a dated,
+reproducible native-database search with a measured recall check (1/6 of the day-1 set
+recovered — the two discovery routes diverge). Candidates are unscreened; no gate is closed.
+
+## Follow-up — 2026-09-08
 
 [SSY-D01 source-review handoff](../evidence/task-2026-09-08/README.md) adds a dated
 first-pass research review. It does not close the full novelty or owner gates.
