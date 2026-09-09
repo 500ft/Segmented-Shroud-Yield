@@ -50,6 +50,10 @@ positive result is not secured cannot be Tier 0, however visually impressive it 
 
 ### SSY-01 · Close the exact-gap and measurement-method search
 
+2026-09-08: [SSY-D01 first-pass source/metrology review](prior-art-search-2026-09-08.md)
+is complete. Full close-competitor texts and the stated broader-search shortfalls
+remain. SSY-01, SSY-02/03 and XC-02 are not automatically closed by this artifact.
+
 `hygiene` · executable now
 
 **Why it matters.** The current source map establishes clearance sensitivity, non-axisymmetric

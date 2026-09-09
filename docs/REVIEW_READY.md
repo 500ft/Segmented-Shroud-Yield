@@ -1,5 +1,11 @@
 # Segmented-Shroud-Yield — partial handoff, local software ready for review
 
+## Latest follow-up — 2026-09-08
+
+[SSY-D01 source-review handoff](../evidence/task-2026-09-08/README.md) adds a dated
+first-pass research review. It does not close the full novelty or owner gates.
+Original sprint evidence below is historical; no new experimental result exists.
+
 Prepared 2026-09-05; resumed and checked 2026-09-06. Budget: six workload days,
 30 focused hours per repository; estimates are not recorded time spent.
 

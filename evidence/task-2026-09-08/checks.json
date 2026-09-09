@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-08",
+  "base": "dddd4f107de978319bb3f41bfeebbe927d36ab91",
+  "baseline_tests": {
+    "chunk_id": "10c169",
+    "wall_time_seconds": 0.206744208,
+    "exit_code": 0,
+    "original_token_count": 265,
+    "output": "test_declared_example_remains_valid (test_manifest_validation.ManifestValidationTests.test_declared_example_remains_valid) ... ok\ntest_nested_required_field_is_enforced (test_manifest_validation.ManifestValidationTests.test_nested_required_field_is_enforced) ... ok\ntest_schema_rejects_invalid_nested_values (test_manifest_validation.ManifestValidationTests.test_schema_rejects_invalid_nested_values) ... ok\ntest_unknown_top_level_field_is_rejected (test_manifest_validation.ManifestValidationTests.test_unknown_top_level_field_is_rejected) ... ok\ntest_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes) ... ok\ntest_example_is_unambiguously_not_a_result (test_repo_contract.RepositoryContractTests.test_example_is_unambiguously_not_a_result) ... ok\ntest_research_dependency_graph_has_no_dangling_endpoints (test_repo_contract.RepositoryContractTests.test_research_dependency_graph_has_no_dangling_endpoints) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.225s\n\nOK\n"
+  },
+  "baseline_contract": {
+    "chunk_id": "932c50",
+    "wall_time_seconds": 0.000002625,
+    "exit_code": 0,
+    "original_token_count": 19,
+    "output": "Repository contract: PASS\nEvidence state: research design; no study results\n"
+  },
+  "final": [
+    {
+      "cmd": "python scripts/check_repo_contract.py",
+      "chunk_id": "3a17fa",
+      "wall_time_seconds": 0.00000275,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "Repository contract: PASS\nEvidence state: research design; no study results\n"
+    },
+    {
+      "cmd": "python -m unittest discover -s tests -v",
+      "chunk_id": "182263",
+      "wall_time_seconds": 0.185516916,
+      "exit_code": 0,
+      "original_token_count": 265,
+      "output": "test_declared_example_remains_valid (test_manifest_validation.ManifestValidationTests.test_declared_example_remains_valid) ... ok\ntest_nested_required_field_is_enforced (test_manifest_validation.ManifestValidationTests.test_nested_required_field_is_enforced) ... ok\ntest_schema_rejects_invalid_nested_values (test_manifest_validation.ManifestValidationTests.test_schema_rejects_invalid_nested_values) ... ok\ntest_unknown_top_level_field_is_rejected (test_manifest_validation.ManifestValidationTests.test_unknown_top_level_field_is_rejected) ... ok\ntest_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes) ... ok\ntest_example_is_unambiguously_not_a_result (test_repo_contract.RepositoryContractTests.test_example_is_unambiguously_not_a_result) ... ok\ntest_research_dependency_graph_has_no_dangling_endpoints (test_repo_contract.RepositoryContractTests.test_research_dependency_graph_has_no_dangling_endpoints) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.216s\n\nOK\n"
+    },
+    {
+      "cmd": "git diff --check",
+      "chunk_id": "1daa2c",
+      "wall_time_seconds": 0.000001167,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ],
+  "initial_document_assembly": [
+    {
+      "cmd": "python scripts/check_repo_contract.py",
+      "chunk_id": "6c21f2",
+      "wall_time_seconds": 0.000002209,
+      "exit_code": 1,
+      "original_token_count": 43,
+      "output": "ERROR: broken local link in evidence/task-2026-09-08/README.md: /Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/evidence/task-2026-09-08/checks.json\n"
+    },
+    {
+      "cmd": "python -m unittest discover -s tests -v",
+      "chunk_id": "46ecda",
+      "wall_time_seconds": 0.1583525,
+      "exit_code": 1,
+      "original_token_count": 711,
+      "output": "test_declared_example_remains_valid (test_manifest_validation.ManifestValidationTests.test_declared_example_remains_valid) ... FAIL\ntest_nested_required_field_is_enforced (test_manifest_validation.ManifestValidationTests.test_nested_required_field_is_enforced) ... ok\ntest_schema_rejects_invalid_nested_values (test_manifest_validation.ManifestValidationTests.test_schema_rejects_invalid_nested_values) ... ok\ntest_unknown_top_level_field_is_rejected (test_manifest_validation.ManifestValidationTests.test_unknown_top_level_field_is_rejected) ... ok\ntest_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes) ... FAIL\ntest_example_is_unambiguously_not_a_result (test_repo_contract.RepositoryContractTests.test_example_is_unambiguously_not_a_result) ... ok\ntest_research_dependency_graph_has_no_dangling_endpoints (test_repo_contract.RepositoryContractTests.test_research_dependency_graph_has_no_dangling_endpoints) ... ok\n\n======================================================================\nFAIL: test_declared_example_remains_valid (test_manifest_validation.ManifestValidationTests.test_declared_example_remains_valid)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/tests/test_manifest_validation.py\", line 27, in test_declared_example_remains_valid\n    self.assertEqual(self.errors_for(json.loads(EXAMPLE.read_text())), [])\nAssertionError: Lists differ: ['broken local link in evidence/task-2026-[119 chars]son'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'broken local link in evidence/task-2026-09-08/README.md: /Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/evidence/task-2026-09-08/checks.json'\n\n+ []\n- ['broken local link in evidence/task-2026-09-08/README.md: '\n-  '/Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/evidence/task-2026-09-08/checks.json']\n\n======================================================================\nFAIL: test_contract_script_passes (test_repo_contract.RepositoryContractTests.test_contract_script_passes)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/tests/test_repo_contract.py\", line 22, in test_contract_script_passes\n    self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)\nAssertionError: 1 != 0 : ERROR: broken local link in evidence/task-2026-09-08/README.md: /Users/redhose/Developer/daily-prs/2026-09-08/Segmented-Shroud-Yield/evidence/task-2026-09-08/checks.json\n\n\n----------------------------------------------------------------------\nRan 7 tests in 0.192s\n\nFAILED (failures=2)\n"
+    },
+    {
+      "cmd": "git diff --check",
+      "chunk_id": "870514",
+      "wall_time_seconds": 0.000002292,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ],
+  "assembly_note": "Initial links ran before checks.json existed; writing the evidence file resolved that documentation assembly failure. No tests weakened."
+}

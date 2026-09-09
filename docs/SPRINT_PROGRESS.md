@@ -1,5 +1,15 @@
 # Sprint progress — Segmented-Shroud-Yield
 
+## 2026-09-08 — SSY-D01 first-pass source review
+
+Completed the bounded priority-one source-review subtask, not the full novelty
+gate. [Report](prior-art-search-2026-09-08.md) and
+[verification](../evidence/task-2026-09-08/README.md). Base `dddd4f107de978319bb3f41bfeebbe927d36ab91`,
+branch `task/priority-one-20260908`; isolated daily worktree. No apparatus,
+measurement, publication, outreach or disclosure approval. Original sprint rows
+preserved. Next: resolve report-listed full-text/search limitations; checks:
+`python scripts/check_repo_contract.py`. PR records committed/pushed identity.
+
 ## 2026-09-06 — Main-branch placement authorized
 
 Owner explicitly requested these PRs be merged to their respective main branches. This supersedes earlier placement-blocked/draft-only entries for the current changes. The combined main-targeted PR retains prerequisite integrity work, unchanged task ledgers and all actual hardware/disclosure gates. No CAD or experiment is marked complete. Merge completion and resulting main commit are verified by GitHub rather than asserted in advance here.
