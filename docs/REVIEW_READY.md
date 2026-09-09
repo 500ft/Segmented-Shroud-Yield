@@ -1,5 +1,13 @@
 # 2026-09-09 — latest review correction
 
+## Day-3 preparation — 2026-09-09
+
+Six new ledger tests preserve acquisition routes, unavailable query mappings, zero-result semantics, unscreened status, all raw rows and deterministic regeneration. 21 tests and repository contract pass. All 499 raw rows retained; 50 provenance holes remain. Public JSASS PDF and a patent claim were accessed; other full-text and disclosure gates remain unresolved.
+
+Review [DAY3_PLAN.md](DAY3_PLAN.md), [deliverable](day3-source-review.md), and [commands/evidence](../evidence/task-day3-2026-09-09/README.md). Base: `6ccb65c648318ca7f4f505452416813956a3ac06`; new PR branch: `task/day-three-20260909`. No original Owner/External gate is closed. Final source identity is the PR head, reported in its delivery record rather than embedded circularly here.
+
+SSY-01 and XC-02 remain open; patent access is not legal clearance.
+
 Read [the D02 integrity review](../evidence/task-2026-09-09-review/README.md)
 before the historical handoff below. D02 is blocked on unexplained acquisition
 provenance; original literal-ID overlap is not a valid recall estimate. The
