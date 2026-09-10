@@ -1,5 +1,13 @@
 # 2026-09-09 — review correction
 
+## Day-3 work — 2026-09-09
+
+Delivery update: the preparation was committed as 500ft and pushed; [day-3 PR](https://github.com/500ft/Segmented-Shroud-Yield/pull/5) is open against main. Initial implementation source: `e5e69c002f71b3ea088da90a1e2205c8d1ee4314` (later review/documentation commits are visible in the PR). This supersedes the pre-push stopping state below. Original day-1/day-2 PRs are merged; this new PR is not merged. Resume from the named unresolved project gates in [DAY3_PLAN.md](DAY3_PLAN.md), not from the already completed push step.
+
+Both reviewed PR layers merged into main; new work starts from `6ccb65c648318ca7f4f505452416813956a3ac06` on `task/day-three-20260909`. Six new ledger tests preserve acquisition routes, unavailable query mappings, zero-result semantics, unscreened status, all raw rows and deterministic regeneration. 21 tests and repository contract pass. All 499 raw rows retained; 50 provenance holes remain. Public JSASS PDF and a patent claim were accessed; other full-text and disclosure gates remain unresolved.
+
+The [evidence record](../evidence/task-day3-2026-09-09/README.md) contains checks and limits. Work is locally verified and not yet recorded here as pushed/merged. Current edits belong to this task; original checkouts were preserved. Next: finish verification, commit the bounded change and open the new PR; preserve all stated external gates.
+
 D02 is now blocked, not accepted as a complete acquisition. The retained export
 contains unexplained query provenance; no recall or route-divergence conclusion
 is established. Added offline audit and safe new-output rerun with explicit

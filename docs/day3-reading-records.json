@@ -1,0 +1,61 @@
+[
+  {
+    "source_id": "S1",
+    "title": "Ryu et al. 2017 counter-rotating ducted fan",
+    "url": "https://doi.org/10.2322/tjsass.60.1",
+    "access": "full_text_sections",
+    "locator": "Publisher PDF /60_T-15-38/_pdf/-char/en; sections 2.1 and 3.1; Table 1; results discussion and conclusions",
+    "aboutness": 2,
+    "evidence_grade": "B for experimental apparatus; clearance sweep scope checked separately",
+    "finding": "150 mm counter-rotating fan apparatus and baseline uniform tip clearance are documented; shaft power uses electrical input with motor efficiency. These sections do not establish an equal-mean seam comparison.",
+    "axes": {
+      "equal_mean_seams": "not_established_in_inspected_sections",
+      "guard_validation": "not_established_in_inspected_sections"
+    },
+    "retrieved_on": "2026-09-09"
+  },
+  {
+    "source_id": "S2",
+    "title": "Second-harmonic clearance distributions",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S1270963823007629",
+    "access": "publisher_indexed_abstract",
+    "locator": "Publisher-indexed abstract; direct full-text retrieval failed",
+    "aboutness": 2,
+    "evidence_grade": "C provisional; not full-text graded",
+    "finding": "Casing ovalization and blade-height variation are studied using full-annulus compressor simulation. Detailed equal-mean treatments remain unresolved.",
+    "axes": {
+      "equal_mean_seams": "unresolved_full_text_needed"
+    },
+    "retrieved_on": "2026-09-09"
+  },
+  {
+    "source_id": "S4",
+    "title": "Segmented duct flow/noise study",
+    "url": "https://www.mdpi.com/2624-8921/8/7/165",
+    "access": "inaccessible",
+    "locator": "Direct publisher open returned Internal Error",
+    "aboutness": null,
+    "evidence_grade": null,
+    "finding": "No new reading achieved; retain the existing day-1 provisional assessment separately.",
+    "axes": {
+      "equal_mean_seams": "unresolved_full_text_needed"
+    },
+    "retrieved_on": "2026-09-09"
+  },
+  {
+    "source_id": "S8",
+    "title": "US5131603A",
+    "url": "https://patents.google.com/patent/US5131603A/en",
+    "access": "patent_claims",
+    "locator": "Claim 1; description immediately preceding claims",
+    "aboutness": 2,
+    "evidence_grade": "disclosure_not_experiment",
+    "finding": "Movable duct-end sectors for slipstream deflection are disclosed. This is not empirical evidence of equal-mean tip-gap seam effects or a protective-guard qualification.",
+    "axes": {
+      "generic_segmentation": "disclosed",
+      "equal_mean_seams": "not_established_by_inspected_claim",
+      "guard_validation": "not_established_by_inspected_claim"
+    },
+    "retrieved_on": "2026-09-09"
+  }
+]
