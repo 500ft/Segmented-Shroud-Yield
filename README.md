@@ -1,134 +1,109 @@
-# Segmented Shroud Yield
+# Segmented Shroud Aeromechanics
 
-**Test whether deployment-generated seams, steps, and ovality let a folding rotor shroud retain both safe clearance and aerodynamic value.**
+A measurement-first study of how seams, distortion, and reconstruction error affect rotor-shroud performance.
 
-[![CI](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml/badge.svg)](https://github.com/500ft/Segmented-Shroud-Yield/actions/workflows/ci.yml)
-![Status: research design](https://img.shields.io/badge/status-research%20design-415a77)
-![Evidence: no results yet](https://img.shields.io/badge/evidence-no%20results%20yet-6b7280)
+[![Repository checks](https://github.com/500ft/segmented-shroud-aeromechanics/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/500ft/segmented-shroud-aeromechanics/actions/workflows/ci.yml)
+![Evidence: research design, not validated](https://img.shields.io/badge/evidence-research_design%2C_not_validated-415a77)
 [![License: MIT](https://img.shields.io/badge/license-MIT-276c6b)](LICENSE)
 
-**[Research question](#research-question) · [First experiment](#first-experiment) · [Evidence boundary](#evidence-boundary) · [Dependency audit](docs/research-dependency-audit.md) · [Roadmap](ROADMAP.md)**
+[Overview](#the-problem) · [Evidence](#evidence-snapshot) · [Quick start](#quick-start) · [First experiment](#first-experiment) · [Reviewer guide](docs/START_HERE.md)
 
-![The planned study tests rigid defect geometry before closure mechanisms, stops at a simpler mean-clearance rule when topology adds no value, and requires a separate guard experiment after a failed duct claim](assets/segmented-shroud-overview.svg)
+![Conceptual study sequence from controlled rigid-duct defects and qualified measurements to a held-out comparison, before conditional mechanism and yield studies](docs/media/project-overview.svg)
 
-*Conceptual decision diagram—not a prototype or result. Condition: proposed rigid-defect and mechanism study. Evidence state: **planned**. No shroud specimen, aerodynamic measurement, or rubbing test has been completed for this repository.*
+*Proposed study architecture—not fabricated geometry or measured performance. No shroud specimen, aerodynamic measurement, or rubbing test has been completed for this repository.*
 
-## Overview
+## The problem
 
-A folding shroud must reconstruct a useful rotor duct repeatedly, not merely lock into a ring-like shape. Joint error, seam opening, latch preload, and ring distortion can change the circumferential tip-clearance field, which may remove aerodynamic benefit or allow blade contact. This project asks whether deployment-specific defect geometry predicts those outcomes better than average clearance alone.
+A segmented rotor shroud must reconstruct useful aerodynamic geometry, not simply close into a ring. Seams, local steps, and distortion can change the clearance around the blade tips. An acceptable average gap may conceal a local contact risk or a loss of aerodynamic benefit.
 
-| | |
-| --- | --- |
-| **Unit of analysis** | Shroud specimen + closure mechanism + deployment cycle + rotor operating point |
-| **Primary defects** | Uniform gap, ovality harmonics, seams, radial steps, and correlated joint error |
-| **Primary outputs** | Dynamic minimum clearance, rubbing event, thrust-per-power, deployment and lock success |
-| **Minimum experiment** | Adjustable rigid defect duct on a contained rotor stand |
-| **Current evidence** | Literature and protocol design only |
-| **Physical testing** | Not started; requires qualified metrology and a guarded rotor stand |
+This project asks whether **defect geometry adds predictive information beyond average clearance**. The first comparison uses controlled rigid ducts, keeping deployment mechanics out of the apparatus until the aerodynamic premise is supported.
 
-**Novelty status:** unresolved. The existing literature map defines a candidate gap, but [`SSY-01`](docs/TASKS.md#ssy-01--close-the-exact-gap-and-measurement-method-search) must close the systematic literature and patent search before any novelty claim is strengthened.
+Neither tip-clearance sensitivity nor generic segmented mechanisms are claimed as new. The [targeted source review](docs/day3-source-review.md) narrows the candidate question to an equal-mean-clearance seam comparison and identifies competing work that still needs resolution.
 
-## Research question
+## Proposed approach
 
-> At equal average clearance, do segmented-shroud defect topology and closure variation explain aerodynamic performance and rubbing risk better than a mean-clearance-only model?
+1. **Qualify the measurements.** Calibrate thrust, electrical power, and clearance; establish uncertainty and stand drift.
+2. **Isolate geometric defects.** Compare uniform, two-lobe, and discrete-seam conditions at equal mean clearance, with open-rotor and monolithic references.
+3. **Compare at matched thrust.** Measure electrical power and dynamic minimum clearance; retain RPM, temperature, vibration, and any contact events.
+4. **Test predictive value.** Compare a defect-aware model with a mean-clearance baseline using a supported, predeclared holdout.
+5. **Expand only if justified.** Mechanism repeatability and aero-mechanical yield are later studies, subject to separate research, metrology, and disclosure gates.
 
-The working hypothesis can fail cleanly. If seams and ovality add no predictive value beyond average clearance inside the tested envelope, a simpler tolerance rule should replace the full segmented-defect model.
+The eventual yield question combines deployment/lock success, sufficient dynamic clearance, and retained aerodynamic benefit. That is a **proposed component-level metric**, not an estimated reliability value. Protection against impact or debris requires an independent guard evaluation.
 
-## How the study works
+## Evidence snapshot
 
-1. Qualify the clearance and thrust/power measurement systems.
-2. Use an adjustable rigid duct to isolate uniform clearance, ovality, seams, and local steps.
-3. Compare conditions at matched thrust and record both electrical power and geometry.
-4. Fit a defect-aware model and compare it with a mean-clearance baseline on a held-out defect family.
-5. Only then compare ordinary and self-centering closure mechanisms at equal ring mass and nominal geometry.
-6. Estimate aero-mechanical yield from deployment, lock, clearance, and performance requirements.
+The executable deliverable today is research-integrity tooling, not a rotor model or hardware demonstration.
 
-The proposed component-level quantity is:
+| Available artifact | What it establishes | Inspect it |
+| --- | --- | --- |
+| Specimen schema and negative tests | Required run metadata and invalid-input rejection | [Schema](protocols/specimen-manifest.schema.json), [tests](tests/) |
+| Source-review rubric and reading records | Access scope and evidence for a narrowed candidate experiment | [Rubric](docs/day3-reading-rubric.md), [source review](docs/day3-source-review.md) |
+| Reproducible acquisition ledger | Preserved routes, identifiers, access scope, and explicit provenance gaps | [Ledger](evidence/task-day3-2026-09-09/acquisition-ledger.json), [generator](scripts/acquisition_ledger.py) |
+| Measurement-first experiment contract | Controls, comparison basis, identifiability, and stop conditions | [Experiment 01](docs/experiment-01-rigid-defect-duct.md) |
+| Recorded software checks | Documentation/schema/provenance checks—not aerodynamic validation | [Verification record](evidence/task-day3-2026-09-09/README.md) |
 
-\[
-Y_{AM}=P(\text{deployed and locked}\;\land\;c_{min}>c_{safe}\;\land\;\Delta(T/P)>0).
-\]
+The 2026-09-09 reconciliation retains **499 raw database rows**, with **50 lacking successful query-log support**. These are acquisition records, not 499 reviewed studies. Recall remains unavailable. The public JSASS PDF was accessed, but two competing treatments and the full novelty closeout remain unresolved; see the [source review](docs/day3-source-review.md).
 
-Mass, packed volume, impact protection, and deployment time remain separate system-level outcomes so the yield metric stays interpretable.
+## Quick start
 
-## First experiment
-
-The first experiment is a rigid, adjustable defect study—not a spinning deployable ring.
-
-| Field | Registered pilot intent |
-| --- | --- |
-| **Hypothesis** | At equal mean clearance, a two-lobe distortion or discrete seam causes a repeatable thrust-per-power or minimum-clearance difference beyond measurement uncertainty. |
-| **Setup** | One contained rotor stand; open rotor; monolithic reference duct; adjustable rigid duct; uniform, two-lobe, and seam conditions. |
-| **Measured** | Geometry, dynamic minimum clearance, thrust, RPM, voltage, current, temperature, vibration, and rubbing events. |
-| **Held constant** | Rotor, motor, controller, inlet condition, nominal duct geometry, test order policy, and matched-thrust operating points. |
-| **Continue gate** | A defect-aware model improves held-out prediction error by at least 20% relative to the mean-clearance model and reaches below 10% error. |
-| **Stop/pivot gate** | The added defect descriptors do not outperform measurement uncertainty or the mean-clearance baseline; report the simpler tolerance result and stop mechanism integration. |
-
-See the complete [`Experiment 01 protocol`](docs/experiment-01-rigid-defect-duct.md). These gates are provisional engineering decisions, not achieved results.
-
-## Evidence boundary
-
-### Present now
-
-- A scoped research question separating established duct and mechanism work from the candidate gap
-- Falsifiable hypotheses, causal variables, baselines, and stop conditions
-- A specimen-manifest contract for future experiments
-- A measurement-first development sequence
-- An automated documentation-integrity check
-
-### Not present
-
-- No fabricated duct or deployable shroud
-- No CAD, FEA, CFD, bench, rubbing, impact, or flight result
-- No demonstrated aerodynamic benefit
-- No estimated aero-mechanical yield
-- No evidence that a self-centering closure outperforms an ordinary latch
-- No authorization for rotor testing
-
-## Check the repository contract
-
-The current executable work checks documentation integrity and protocol structure; it does **not** analyze a rotor.
+Use **Python 3.11**, matching [CI](.github/workflows/ci.yml), and Git. The only declared dependency is pinned in [requirements.txt](requirements.txt). No CAD license, CFD solver, instrument connection, or rotor hardware is needed for these checks.
 
 ```bash
+git clone https://github.com/500ft/segmented-shroud-aeromechanics.git
+cd segmented-shroud-aeromechanics
+python3.11 -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 python scripts/check_repo_contract.py
+python scripts/acquisition_ledger.py --check
 python -m unittest discover -s tests -v
 ```
 
-## Status and next gate
+On Windows, activate with `.venv\Scripts\Activate.ps1` in PowerShell instead of `source`.
 
-The research-design package and integrity checks exist; CAD, specimens, and every computational or measured result remain pending. The next gate is the exact-gap and measurement-method search in [`SSY-01`](docs/TASKS.md#ssy-01--close-the-exact-gap-and-measurement-method-search), followed by a frozen uncertainty budget and defect basis. The [directed dependency audit](docs/research-dependency-audit.md) shows why the closure mechanism and protective-guard branches require separate positive evidence.
+Expected: the repository contract passes, the committed ledger is consistent, and the test suite ends with `OK`. Passing checks do not establish aerodynamic benefit, close the source-review gate, or authorize fabrication.
 
-## Documentation
+To rebuild **only the derived literature ledger** from committed inputs:
 
-| Document | Purpose |
-| --- | --- |
-| [`docs/research-plan.md`](docs/research-plan.md) | Research questions, yield definition, hypotheses, variables, and analysis plan |
-| [`docs/prior-art.md`](docs/prior-art.md) | Established work and the narrow candidate contribution |
-| [`docs/experiment-01-rigid-defect-duct.md`](docs/experiment-01-rigid-defect-duct.md) | Smallest decisive physical experiment |
-| [`docs/claim-ledger.md`](docs/claim-ledger.md) | Permitted language for each evidence state |
-| [`docs/data-and-figures.md`](docs/data-and-figures.md) | Planned data lineage and visual-evidence rules |
-| [`docs/decision-log.md`](docs/decision-log.md) | Decisions, alternatives, and pivot logic |
-| [`docs/research-dependency-audit.md`](docs/research-dependency-audit.md) | Source-reviewed directed claim and gate map, including graph limitations |
-| [`docs/TASKS.md`](docs/TASKS.md) | Tiered execution plan with simpler-model, duct, guard, and parked branches |
-| [`ROADMAP.md`](ROADMAP.md) | Gate-driven path from metrology to possible mechanism validation |
-
-## Repository map
-
-```text
-assets/      conceptual diagrams; never presented as hardware evidence
-data/        schema and future data-location guidance; currently no observations
-docs/        research plan, literature boundary, protocol, and claim controls
-protocols/   machine-readable specimen manifest and example
-results/     explicit placeholder; currently no results
-scripts/     repository-integrity checks
-tests/       tests for documentation and protocol contracts
+```bash
+python scripts/acquisition_ledger.py
+git diff -- evidence/task-day3-2026-09-09/acquisition-ledger.json
 ```
 
-## Safety boundary
+This operation is offline. Unchanged inputs should produce no diff. It does not retrieve papers, generate CAD, or calculate shroud performance.
 
-This repository does not authorize rotor testing. Any experiment requires a structurally rated enclosure, remote arming and shutdown, current protection, verified rotor/duct clearance, eye and hearing protection, debris containment, and approval from the responsible laboratory. Measurement-system qualification and low-energy commissioning precede performance testing.
+## First experiment
+
+The first study is an **adjustable rigid-defect duct on a contained rotor stand**. It intentionally excludes deployment mechanisms. Before collecting hypothesis-test data, the measurement uncertainty must be small enough to resolve the registered effect of interest.
+
+The primary comparison is electrical power required at **matched thrust**. A shaft-power result from prior literature is not interchangeable with electrical efficiency, and an RPM-matched comparison is only a secondary diagnostic.
+
+The [full protocol](docs/experiment-01-rigid-defect-duct.md) owns the provisional continuation and pivot gates. A held-out defect family also needs identifiable model descriptors or an explicitly specified extrapolation model. If additional defect descriptors do not help, report the simpler tolerance finding; do not infer protective-guard performance.
+
+[First-experiment details](docs/START_HERE.md#first-experiment-decision) · [Gate-driven roadmap](ROADMAP.md) · [Research tasks](docs/TASKS.md)
+
+## Evidence and safety limits
+
+- No CAD, FEA, CFD, fabricated duct, deployable shroud, or measured performance result is included.
+- No aerodynamic benefit, aero-mechanical yield, strike-safety, or protective-guard capability is demonstrated.
+- A complete specimen manifest does not authenticate measurements or release a design for manufacture.
+- Rotor testing requires qualified containment, remote arming/shutdown, current protection, verified clearance, low-energy commissioning, a site-specific risk assessment, and facility approval.
+- [XC-02 and the public-disclosure boundary](CONTRIBUTING.md#public-disclosure-boundary) remain open. Implementation-sensitive mechanism details are withheld; access to patent text is not legal clearance.
+
+## Documentation routes
+
+| If you want to… | Start here |
+| --- | --- |
+| Understand the project in five minutes | [Reviewer guide](docs/START_HERE.md) |
+| Challenge the proposed contribution | [Current source review](docs/day3-source-review.md), then [prior-art boundary](docs/prior-art.md) |
+| Inspect variables and statistical claims | [Research plan](docs/research-plan.md) and [claim ledger](docs/claim-ledger.md) |
+| Assess measurement feasibility | [Experiment 01](docs/experiment-01-rigid-defect-duct.md) |
+| Trace work and alternative outcomes | [Review index](docs/REVIEW_READY.md), [dependency audit](docs/research-dependency-audit.md), [decision log](docs/decision-log.md) |
 
 ## Contributing and license
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Source and repository tooling are available under the [MIT License](LICENSE). Third-party papers and documentation remain under their original licenses.
+Reproduction reports, precise source corrections, and metrology critiques are welcome. Include the commit, command or source locator, expected behavior, and observed result. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a [pull request or issue](https://github.com/500ft/segmented-shroud-aeromechanics/issues).
+
+Repository software is [MIT licensed](LICENSE); third-party publications retain their original licenses. This is a research repository, not a qualified rotor enclosure or fabrication package.
+
+[Repository identity and presentation references](docs/REPOSITORY_IDENTITY.md)
