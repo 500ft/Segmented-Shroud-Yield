@@ -1,0 +1,174 @@
+{
+ "register_version": "2026-09-12-r1",
+ "summary": {
+  "d01_sources": 10,
+  "eligible": 6,
+  "not_eligible": 4,
+  "recall": {
+   "day2_historical": {
+    "recovered": 4,
+    "of_eligible": 6,
+    "recovered_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "missed_ids": [
+     "S4",
+     "S6"
+    ],
+    "export_retrieved_utc": "2026-09-09T02:32:55Z"
+   },
+   "day4_public": {
+    "recovered": 4,
+    "of_eligible": 6,
+    "recovered_ids": [
+     "S1",
+     "S2",
+     "S3",
+     "S5"
+    ],
+    "missed_ids": [
+     "S4",
+     "S6"
+    ],
+    "export_retrieved_utc": "2026-09-11T21:41:14Z"
+   }
+  },
+  "previously_reported": {
+   "day2_historical": "1 of 6 (anchor set held S1 only; S2, S3, S5 present but uncredited)",
+   "day4_public": "3 of 3 (denominator was the three resolved anchors, not the six eligible sources)"
+  },
+  "not_eligible_ids": [
+   "S7",
+   "S8",
+   "S9",
+   "S10"
+  ]
+ },
+ "rows": [
+  {
+   "source_id": "S1",
+   "title": "Ryu et al., 2017 (JSASS)",
+   "eligible": true,
+   "eligibility_reason": "eligible: Crossref DOI, OpenAlex-indexed, gold OA",
+   "aliases": [
+    "doi:10.2322/tjsass.60.1"
+   ],
+   "present": {
+    "day2_historical": true,
+    "day4_public": true
+   }
+  },
+  {
+   "source_id": "S2",
+   "title": "Second-harmonic tip clearance distributions (casing ovalization), AST 2024",
+   "eligible": true,
+   "eligibility_reason": "eligible: Crossref DOI 10.1016/j.ast.2023.108866 (title match; note the day-1 URL's PII ends ...7624 while Crossref's alternative-id is ...7629 - the day-1 link may be mistyped, recorded, not corrected)",
+   "aliases": [
+    "doi:10.1016/j.ast.2023.108866"
+   ],
+   "present": {
+    "day2_historical": true,
+    "day4_public": true
+   }
+  },
+  {
+   "source_id": "S3",
+   "title": "Nonuniform clearance layouts, 2026 (AST)",
+   "eligible": true,
+   "eligibility_reason": "eligible: Crossref DOI resolved from PII via alternative-id",
+   "aliases": [
+    "doi:10.1016/j.ast.2026.111933"
+   ],
+   "present": {
+    "day2_historical": true,
+    "day4_public": true
+   }
+  },
+  {
+   "source_id": "S4",
+   "title": "Segmented ducted fan flow/noise, 2026 (MDPI Vehicles)",
+   "eligible": true,
+   "eligibility_reason": "eligible: Crossref DOI",
+   "aliases": [
+    "doi:10.3390/vehicles8070165"
+   ],
+   "present": {
+    "day2_historical": false,
+    "day4_public": false
+   }
+  },
+  {
+   "source_id": "S5",
+   "title": "Optical fiber measurement system, 2017 (Hindawi IJAE)",
+   "eligible": true,
+   "eligibility_reason": "eligible: Crossref DOI, OpenAlex-indexed",
+   "aliases": [
+    "doi:10.1155/2017/4168150"
+   ],
+   "present": {
+    "day2_historical": true,
+    "day4_public": true
+   }
+  },
+  {
+   "source_id": "S6",
+   "title": "Fibre sensor for tip clearance, 2018 (Sensors, PMC6111710)",
+   "eligible": true,
+   "eligibility_reason": "eligible: PMC article with DOI (10.3390/s18082610, from the PMC page header)",
+   "aliases": [
+    "doi:10.3390/s18082610"
+   ],
+   "present": {
+    "day2_historical": false,
+    "day4_public": false
+   }
+  },
+  {
+   "source_id": "S7",
+   "title": "NASA microwave clearance/health measurement, 2008 (NTRS 20080047680)",
+   "eligible": false,
+   "eligibility_reason": "NOT eligible: NASA technical report without a DOI; not indexed by Crossref; OpenAlex shows a same-title 2008 record with no DOI, which none of the DOI/arXiv-keyed exports could return",
+   "aliases": [],
+   "present": {
+    "day2_historical": null,
+    "day4_public": null
+   }
+  },
+  {
+   "source_id": "S8",
+   "title": "US5131603A, 1992",
+   "eligible": false,
+   "eligibility_reason": "NOT eligible: patent; no patent database queried",
+   "aliases": [],
+   "present": {
+    "day2_historical": null,
+    "day4_public": null
+   }
+  },
+  {
+   "source_id": "S9",
+   "title": "JP2023124296A, 2023",
+   "eligible": false,
+   "eligibility_reason": "NOT eligible: patent (day-1 aboutness 0, excluded hit)",
+   "aliases": [],
+   "present": {
+    "day2_historical": null,
+    "day4_public": null
+   }
+  },
+  {
+   "source_id": "S10",
+   "title": "US11634222B2, 2023",
+   "eligible": false,
+   "eligibility_reason": "NOT eligible: patent",
+   "aliases": [],
+   "present": {
+    "day2_historical": null,
+    "day4_public": null
+   }
+  }
+ ]
+}
