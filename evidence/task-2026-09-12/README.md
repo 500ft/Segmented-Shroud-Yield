@@ -21,3 +21,9 @@ Recall over the six eligible sources is **4/6 for both exports** (reported 1/6 a
 
 ## Not done / not reachable
 mdpi.com 403 to this client (not circumvented); sciencedirect landing paywalled; downloads.hindawi.com http-only host unreachable; ntrs.nasa.gov and patents.google.com not on the allowlist. No novelty, patent or owner gate closed; no apparatus, specimen or measurement.
+
+## Review repair (SSY-R02b, same day)
+- `scripts/reference_coverage.py` is provenance-bound: hits without a logged successful query are excluded from credit and enumerated; canonical export = `day4_public`, rejected = `['day2_historical']`. Recall unchanged (no anchor was untraceable); the record now says what it can show.
+- Novelty-axis table generated from the reading records: each axis is `narrowed_by_disclosure` / `supported_bounded` / `unresolved`, with the sources in each state named. Abstract-only and inaccessible sources never count as support.
+- `SSY-D02` reconciled and closed against this single record; no successor row.
+- `scripts/clearance_uncertainty_budget.py` + `docs/clearance-measurement-budget.csv` + `tests/test_clearance_budget.py`: Stage A stop rule as a fail-closed computation; literature sensor bounds excluded from the combination; verdict `INPUTS_PENDING` (7 terms), record committed and `--check`-gated.
